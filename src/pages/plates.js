@@ -65,6 +65,7 @@ export default function Home() {
     };
   });
 
+  //#region Functions
   function setPlateFn(plate) {
     let temp = plate;
     setPlate((temp.replace(/o/gi, '')).replace(/[^a-z0-9+]+/gi, ''));
@@ -112,7 +113,9 @@ export default function Home() {
     })
       .then(resp => resp.json())
   }
+  //#endregion
 
+  // Page
   return (
     <div className="container">
       {/* Header & Logo */}
@@ -133,7 +136,7 @@ export default function Home() {
         <li className="exit"><a onClick={e => exit()} href="#" role="buton">Exit</a></li>
       </ul>
       {/* Content / Body */}
-      <link href="https://fonts.cdnfonts.com/css/plat-nomor" rel="stylesheet"/>
+      <link href="https://fonts.cdnfonts.com/css/plat-nomor" rel="stylesheet" />
       <div className="wrapper">
         <h1>Purchasing a Personalised Licence Plate</h1>
         <p>

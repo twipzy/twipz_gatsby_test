@@ -1,3 +1,4 @@
+// General
 export function exit() {
     fetch('http://highlife/CloseDMVNui', {
         method: "POST",

@@ -19,6 +19,7 @@ export default function Home() {
         }
     })
 
+    // Page
     return (
         <div className="container">
             {/* Header & Logo */}
