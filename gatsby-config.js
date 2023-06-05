@@ -8,5 +8,6 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: "/twipz_gatsby_test",
   plugins: [],
 }
