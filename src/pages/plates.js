@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react"
-import { Radio, Alert, Button, Card, Progress, Result } from "antd"
+
+// Style
+import "../assets/style.css"
+// import { Radio, Alert, Button, Card, Progress, Result } from "antd"
+import { Alert, Button, Result } from "antd"
+
+// Images
 import Logo from "../assets/logo.png"
 import PlateImage from "../assets/plate.png"
-import "../assets/style.css"
+
+// Functions
+import { exit } from "../utils/functions"
 
 export default function Home() {
-  const [plate, setPlate] = useState("DMV");
+  const [plate, setPlate] = useState("");
   const [price, setPrice] = useState(undefined);
   const [error, setError] = useState(undefined);
   const [available, setAvailable] = useState(false);
@@ -56,14 +64,6 @@ export default function Home() {
       }
     };
   });
-
-  function exit() {
-    fetch('http://highlife/CloseDMVNui', {
-      method: "POST",
-      headers: { "Content-Type": "application/json; charset=UTF-8" },
-      body: JSON.stringify({}),
-    }).then(resp => resp.json())
-  }
 
   function setPlateFn(plate) {
     let temp = plate;
@@ -130,7 +130,7 @@ export default function Home() {
         <li>
           <a className="active" href="/plates">Personalised Licence Plates</a>
         </li>
-        <li className="exit"><a href="#" role="buton">Exit</a></li>
+        <li className="exit"><a onClick={e => exit()} href="#" role="buton">Exit</a></li>
       </ul>
       {/* Content / Body */}
       <link href="https://fonts.cdnfonts.com/css/plat-nomor" rel="stylesheet"/>
@@ -161,6 +161,7 @@ export default function Home() {
                 maxLength={8}
                 onChange={e => setPlateFn(e.target.value)}
                 type="text"
+                placeholder="DMV"
               />
             </div>
             <div className="buttons">

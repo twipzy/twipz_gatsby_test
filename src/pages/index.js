@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from "react"
-import { Radio, Alert, Button, Card, Progress, Result } from "antd"
+import React, { useEffect } from "react"
+
+// Style
+import "../assets/style.css"
+// import { Radio, Alert, Button, Card, Progress, Result } from "antd"
+
+// Images
 import Logo from "../assets/logo.png"
 import Button1Image from "../assets/test.jpg"
 import Button2Image from "../assets/plates.jpg"
-import "../assets/style.css"
+
+// Functions
+import { exit } from "../utils/functions"
 
 export default function Home() {
   useEffect(() => {
@@ -13,14 +20,6 @@ export default function Home() {
       }
     }
   })
-
-  function exit() {
-    fetch('http://highlife/CloseDMVNui', {
-      method: "POST",
-      headers: { "Content-Type": "application/json; charset=UTF-8" },
-      body: JSON.stringify({}),
-    }).then(resp => resp.json())
-  }
 
   return (
     <div className="container">
@@ -39,7 +38,7 @@ export default function Home() {
         <li>
           <a href="/plates">Personalised Licence Plates</a>
         </li>
-        <li className="exit"><a href="#" role="buton">Exit</a></li>
+        <li className="exit"><a onClick={e => exit()} href="#" role="buton">Exit</a></li>
       </ul>
       {/* Content / Body */}
       <div class="wrapper">
