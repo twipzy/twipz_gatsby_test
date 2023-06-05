@@ -8797,7 +8797,7 @@ body,html{
     width:100vw;
     display:flex;
     justify-content:center;
-    background-color:transparent!important
+    background-color: rgba(0, 0, 0, .2);
 }
 body{
     -webkit-text-size-adjust:none
